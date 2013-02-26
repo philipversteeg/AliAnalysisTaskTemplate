@@ -1,0 +1,49 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# ROOT/AliROOT generated files
+*.d
+*.root
+*.xml
+*.jdl
+*.sh
+*_merge.*
+EfficiencyTaskAODPbPb.C
+
+# SublimeText project files
+/*.sublime-project
+*.sublime-workspace
+
+# Other files
+*.nb
+*.pdf
+*.xlsx
+*.zip
+*.eps
+*.pptx
+
+# TeX output
+*.log
+*.gz
+*.aux
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
