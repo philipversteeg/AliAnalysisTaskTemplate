@@ -34,11 +34,11 @@ void runLocalAOD(Bool_t IsMC, Int_t AODproduction, Int_t runnumber, Int_t nfiles
 	
 	if (IsMC) {
 		for (Int_t ii = 1; ii < (nfiles + 1); ii++) {
-			analysisChain->Add(Form("/Users/Misha/Alice/sim/LHC11a10a_bis/%d/AOD%03d/%04d/AliAOD.root",runnumber,AODproduction,ii));
+			analysisChain->Add(Form("/Users/mishaveldhoen/LocalData/sim/LHC11a10a_bis/%d/AOD%03d/%04d/AliAOD.root",runnumber,AODproduction,ii));
 		}
 	} else {
 		for (Int_t ii = 1; ii < (nfiles + 1); ii++) {
-			analysisChain->Add(Form("/Users/Misha/Alice/data/2010/LHC10h/000%d/ESDs/pass2/AOD%03d/%04d/AliAOD.root",runnumber,AODproduction,ii));
+			analysisChain->Add(Form("/Users/mishaveldhoen/LocalData/data/2010/LHC10h/000%d/ESDs/pass2/AOD%03d/%04d/AliAOD.root",runnumber,AODproduction,ii));
 		}
 	}
 
