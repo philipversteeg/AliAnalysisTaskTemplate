@@ -77,6 +77,14 @@ void AliAnalysisTaskTemplate::UserExec(Option_t*) {
 
 	AliAODEvent* currentEvent = dynamic_cast<AliAODEvent*>(InputEvent());
 
+	// Input the event handler.
+	AliInputEventHandler* InputHandler = (AliInputEventHandler*)((AliAnalysisManager::GetAnalysisManager())->GetInputEventHandler());
+	if (!InputHandler) return;
+
+	// Select min. bias events.
+	UInt_t trigger = InputHandler->IsEventSelected();
+	if (!(trigger & AliVEvent::kMB)) {return;}
+
 	// Fill Pt distribution.
 	for (Int_t iTrack = 0; iTrack < currentEvent->GetNumberOfTracks(); iTrack++) {
 
