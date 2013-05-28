@@ -19,7 +19,7 @@
 *.jdl
 *.sh
 *_merge.*
-EfficiencyTaskAODPbPb.C
+TemplateTask.C
 
 # SublimeText project files
 /*.sublime-project
