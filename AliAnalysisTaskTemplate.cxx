@@ -91,6 +91,15 @@ void AliAnalysisTaskTemplate::UserExec(Option_t*) {
 		AliAODTrack* currentTrack = (AliAODTrack*)currentEvent->GetTrack(iTrack);
 		fPtDistribution->Fill(currentTrack->Pt());
 
+		UInt_t map = currentTrack->GetFilterMap();
+		if (!map) {continue;}
+		//if (!(map & (1<<10))) {continue;}
+
+		// Propagate track to DCA.
+		Double_t PosAtDCA[2] = {-999,-999};
+	    Double_t covar[3] = {-999,-999,-999};
+	    /*Bool_t propagate =*/ currentTrack->PropagateToDCA(currentEvent->GetPrimaryVertex(),currentEvent->GetMagneticField(),100.,PosAtDCA,covar);
+
 	}
 
 	PostData(1,fOutputList);
